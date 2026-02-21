@@ -1,20 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const skills = ['Java', 'Python', 'C++', 'HTML', 'CSS', 'C'];
-    const container = document.getElementById('skill-container');
+    // 1. Typewriter Effect
+    const text = "A Roblox Developer & CSE Student.";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 100);
+        }
+    }
+    type();
 
-    // Dynamically create skill chips
-    skills.forEach(skill => {
-        const div = document.createElement('div');
-        div.className = 'skill';
-        div.innerText = skill;
-        
-        // Add a click effect for fun
-        div.addEventListener('click', () => {
-            console.log(`Mastering ${skill}...`);
-        });
-
-        container.appendChild(div);
+    // 2. Skill Injection
+    const skills = ['Java', 'Python', 'C++', 'HTML', 'CSS', 'C', 'Luau (Roblox)', 'Problem Solving'];
+    const container = document.getElementById('skills-box');
+    skills.forEach(s => {
+        const span = document.createElement('span');
+        span.className = 'skill-pill';
+        span.innerText = s;
+        container.appendChild(span);
     });
 
-    console.log("Anushka's Portfolio Loaded!");
+    // 3. Scroll Reveal Animation
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
