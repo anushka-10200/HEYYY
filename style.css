@@ -1,0 +1,120 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #4A4E69;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #4A4E69;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover { color: #9A8C98; }
+
+/* SECTIONS */
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+#home { background: linear-gradient(135deg, #D6E4FF 0%, #E8DFF5 100%); }
+#about { background: linear-gradient(135deg, #E8DFF5 0%, #FCE1E4 100%); }
+#projects { background: linear-gradient(135deg, #FCE1E4 0%, #D6E4FF 100%); }
+
+/* TYPOGRAPHY */
+h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    color: white;
+    text-shadow: 4px 4px 0px rgba(154, 140, 152, 0.2);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+/* CARDS */
+.glass-card {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    max-width: 600px;
+    width: 100%;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #9A8C98;
+}
+
+.skill:hover {
+    transform: translateY(4px);
+    box-shadow: none;
+    background: #9A8C98;
+    color: white;
+}
+
+.ping-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: #4A4E69;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.ping-btn:hover { background: #9A8C98; transform: scale(1.05); }
+
+/* ANIMATION */
+.fade-in { animation: fadeIn 1.5s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
